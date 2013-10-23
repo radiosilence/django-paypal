@@ -8,7 +8,7 @@ TEST = getattr(settings, "PAYPAL_TEST", True)
 
 
 RECEIVER_EMAIL = getattr(settings, 'PAYPAL_RECEIVER_EMAIL', 'test@example.com')
-
+RECEIVER_EMAILS = [v for k, v in getattr(settings, 'PAYPAL_RECEIVER_EMAILS', {}).items()]
 
 # API Endpoints.
 POSTBACK_ENDPOINT = "https://www.paypal.com/cgi-bin/webscr"
