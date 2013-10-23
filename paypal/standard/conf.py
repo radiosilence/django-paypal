@@ -7,7 +7,7 @@ class PayPalSettingsError(Exception):
 TEST = getattr(settings, "PAYPAL_TEST", True)
 
 
-RECEIVER_EMAIL = settings.PAYPAL_RECEIVER_EMAIL
+RECEIVER_EMAIL = getattr(settings, 'PAYPAL_RECEIVER_EMAIL', 'test@example.com')
 
 
 # API Endpoints.
